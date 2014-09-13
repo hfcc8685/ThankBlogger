@@ -1,12 +1,82 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
 <html>
-<head>
-	ThankBlogger
-</head>
+	<head>
+	    <title>ThankBlogger</title>
+
+	    <!-- Meta -->
+	    <meta charset="utf-8">
+	    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	    <meta content="" name="description">
+	    <meta content="" name="author">
+
+	    <!-- Favicon -->
+	    <link rel="shortcut icon" href="favicon.ico">
+	    
+	    <!-- CSS Global Compulsory -->
+	    <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="/css/style.css">
+
+	    <!-- CSS Implementing Plugins -->
+	    <link rel="stylesheet" href="/plugins/line-icons/line-icons.css">
+	    <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.css">
+	    
+	    <!-- CSS Theme -->
+	    <link rel="stylesheet" href="/css/themes/default.css">
+	</head>
 	<body>
-		<section id="content">
-			{% block content %}
-				<p>Missing content!</p>
-			{% endblock %}
-		</section>
+		<div class="wrapper">
+			<!--=== Header ===-->
+			<div class="header">
+			    <!-- Topbar -->
+			    <div class="topbar">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default">ThankBlogger</button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						    <i class="fa fa-list"></i>
+						    <span class="sr-only">Toggle Dropdown</span>                            
+						</button>
+						<ul class="dropdown-menu" role="menu">
+						    <li><a href="/Timeline"><i class="fa fa-calendar"></i> Timeline</a></li>
+						    <li class="divider"></li>
+						    <li><a href="#"><i class="fa fa-female"></i> AboutUs</a></li>
+						</ul>
+					</div>
+			    </div>
+			    <!--  End Topbar -->
+			</div>
+			<!--=== End Header ===-->
+			
+			<!--=== Content Part  ===-->
+			<div class="container content">
+				{% block content %}
+					<p>Missing content!</p>
+				{% endblock %}
+			</div><!--/container-->
+			<!--=== End Content Part  ===-->	   
+		</div>	
+
+		<!-- JS Global Compulsory -->
+		<script src="/plugins/jquery-1.10.2.min.js"></script>
+		<script src="/plugins/jquery-migrate-1.2.1.min.js"></script>
+		<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- JS Implementing Plugins -->
+		<script src="/plugins/back-to-top.js"></script>
+
+		<!-- JS Page Level -->
+		<script src="/js/app.js"></script>
+		<script>
+		jQuery(document).ready(function() {
+		    App.init();
+		});
+		</script>
+
+		<!--[if lt IE 9]>
+		    <script src="/js/respond.js"></script>
+		<![endif]-->	
 	</body>
 </html>
