@@ -20,7 +20,7 @@ function *timeLine() {
 }
 
 function *aboutUs() {
-	this.body = "aboutUs";
+	this.body = yield render('aboutUs');
 }
 
 app.listen(3000);
