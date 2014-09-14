@@ -14,6 +14,7 @@ app.use(router(app));
 
 app.get('/TimeLine', timeLine);
 app.get('/AboutUs', aboutUs);
+app.get('/Home',home);
 
 function *timeLine() {
 	this.body = yield render('timeline');
@@ -21,6 +22,9 @@ function *timeLine() {
 
 function *aboutUs() {
 	this.body = yield render('aboutUs');
+}
+function *home(){
+	this.body = yield render('home');
 }
 
 app.listen(3000);
