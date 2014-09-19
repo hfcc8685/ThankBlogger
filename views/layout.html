@@ -40,9 +40,9 @@
 		            <div class="container">
 		                <!-- Topbar Navigation -->
 		                <ul class="loginbar pull-right">
-		                    <li><a href="#"><span aria-hidden="true" class="icon-key"></span> 快速注册</a></li>  
+		                    <li><a href="#"><span aria-hidden="true" class="icon-key text-success"></span> 快速注册</a></li>  
 		                    <li class="topbar-devider"></li>   
-		                    <li><a href="#"><span aria-hidden="true" class="icon-login"></span> 登录</a></li>   
+		                    <li><a href="#"><span aria-hidden="true" class="icon-login text-success"></span> 登录</a></li>   
 		                </ul>
 		                <!-- End Topbar Navigation -->
 		            </div>
@@ -58,19 +58,23 @@
 		                        <span class="sr-only">Toggle navigation</span>
 		                        <span class="fa fa-bars"></span>
 		                    </button>
-		                    <a class="navbar-brand" href="index.html">
-		                        ThankBlogger
+		                    <a class="navbar-brand" style="font-size: 35px;" href="index.html">
+		                        <span class="text-success">ThankBlogger</span>
 		                    </a>
 		                </div>
 
 		                <!-- Collect the nav links, forms, and other content for toggling -->
 		                <div class="collapse navbar-collapse navbar-responsive-collapse">
 		                    <ul class="nav navbar-nav">
-		                        <li><a href="/Home"><span aria-hidden="true" class="icon-home"></span> 主页</a></li>
+		                        <li><a href="/Home">
+		                        	<span aria-hidden="true" class="icon-home text-success"></span> 主页</a>
+		                       	</li>
 		                        <li><a href="/Timeline">
-		                        	<span aria-hidden="true" class="icon-directions"></span> 时间轴</a>
+		                        	<span aria-hidden="true" class="icon-directions text-success"></span> 时间轴</a>
 		                        </li>
-		                        <li><a href="/AboutUs"><span aria-hidden="true" class="icon-bubbles"></span> 关于我们</a></li>
+		                        <li><a href="/AboutUs">
+		                        	<span aria-hidden="true" class="icon-bubbles text-success"></span> 关于我们</a>
+		                        </li>
 		                        <!-- Search Block -->
 		                        <li>
 		                            <i class="search fa fa-search search-btn"></i>
@@ -91,7 +95,9 @@
 		        <!-- End Navbar -->
 		    </div>
 		    <!--=== End Header ===-->      
-			
+			{% block breadCrumbs %}
+
+			{% endblock %}
 			<!--=== Content Part  ===-->
 			<div class="container content">
 				{% block content %}
