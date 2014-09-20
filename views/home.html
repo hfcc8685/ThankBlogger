@@ -9,19 +9,21 @@
 	                    <div class="overflow-hidden">
 	                        <a href="{{ blog.blogUri }}"><img alt="" src="/img/team/1.jpg" class="img-responsive"></a>
 	                    </div>
-	                    <h2>
-		                    <a>
-		                    	<span class="icon-fire text-primary" aria-hidden="true"></span> 
+	                    <h3>	                    	
+		                    <a href="{{ blog.blogUri }}">
 		                    	{{ blog.name }}
 		                    </a> 
-		                    <div class="overflow-hidden" style="height:35px;">
+		                    <div class="overflow-hidden" style="height:31px;">
 		                       {% for tag in blog.tags %}
 		                           <span class="label label-light">{{ tag }}</span>
 		                       {% endfor %}
 		                    </div>
 	                    </h3>
-	                    <p style="height: 62px;" class="overflow-hidden">{{ blog.evaluation }}</p>
+	                    <p style="height: 55px;" class="overflow-hidden">{{ blog.evaluation }}</p>
 	                    <ul class="list-unstyled list-inline team-socail">
+	                        <li>
+	                        	<i aria-hidden="true" class="icon-heart" style="color:red;"></i> 10000
+	                        </li>
 	                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
 	                        <li><a href="#"><i class="fa fa-weibo"></i></a></li>
 	                    </ul>
