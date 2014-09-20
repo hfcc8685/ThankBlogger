@@ -2,8 +2,6 @@
 {% block content %}
          <div class="row team">
         {% for blogger in bloggers %}
-            <!-- {% if loop.first %}
-            {% endif %} -->
 	            <div class="col-sm-3">
 	                <div class="thumbnail-style thumbnail-kenburn" style="border: 1px solid #ddd;">
 	                    <div class="overflow-hidden">
@@ -32,11 +30,6 @@
 	                    </ul>
 	                </div>
 	            </div>
-	        <!-- {% if loop.index%4 == 0 %}
-            	</div>
-		        <hr class="margin-bottom-40">
-		        <div class="row team margin-bottom-20">
-            {% endif %} -->
         {% endfor %}
         </div>
         <div >

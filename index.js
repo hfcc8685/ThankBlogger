@@ -18,8 +18,8 @@ app.get('/Blogger/:id',blogger)
 app.get('/TimeLine', timeLine);
 app.get('/AboutUs', aboutUs);
 
-function *home(){
-    for(var i = 0; i < 12; i++) {
+function *bloggerList(){
+	 for(var i = 0; i < 12; i++) {
 	    var blogger = {
 			id:001,
 			name:'hanfeng',
@@ -32,10 +32,6 @@ function *home(){
 	    bloggers.push(blogger);
 	}
 	this.body = yield render('home',{bloggers:bloggers});
-}
-
-function *bloggerList(){
-	this.body = yield render('home',{blogs:blogs});
 }
 
 function *blogger() {
