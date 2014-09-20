@@ -5,6 +5,7 @@ var staticServer = require('koa-static')
 var path = require('path');
 
 var app = koa();
+var bloggers = [];
 
 //处理静态资源文件夹
 app.use(staticServer(path.join(__dirname, 'assets')));
