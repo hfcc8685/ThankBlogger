@@ -1,13 +1,14 @@
 {% extends 'layout.html' %}
 {% block content %}
+         <div class="row team">
         {% for blog in blogs %}
-            {% if loop.first %}
-            	<div class="row team margin-bottom-20">
-            {% endif %}
+            <!-- {% if loop.first %}
+            {% endif %} -->
 	            <div class="col-sm-3">
 	                <div class="thumbnail-style thumbnail-kenburn" style="border: 1px solid #ddd;">
 	                    <div class="overflow-hidden">
-	                        <a href="{{ blog.blogUri }}"><img alt="" src="/img/team/1.jpg" class="img-responsive"></a>
+	                        <a href="{{ blog.blogUri }}"><img alt="" src="/img/team/1.jpg" class="img-responsive">
+	                        </a>
 	                    </div>
 	                    <h3>	                    	
 		                    <a href="{{ blog.blogUri }}">
@@ -30,14 +31,14 @@
 	                    </ul>
 	                </div>
 	            </div>
-	        {% if loop.index%4 == 0 %}
+	        <!-- {% if loop.index%4 == 0 %}
             	</div>
-		        <!-- <hr class="margin-bottom-40"> -->
+		        <hr class="margin-bottom-40">
 		        <div class="row team margin-bottom-20">
-            {% endif %}
+            {% endif %} -->
         {% endfor %}
-        {% if loop.end %}
-        	</div>
-        {% endif %}
-
+        </div>
+        <div >
+        	<button class="btn-u btn-brd rounded-4x btn-u-lg pull-right" type="button"><i class="fa fa-random"></i> 换一页</button>
+        </div>
 {% endblock %}
