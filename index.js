@@ -11,163 +11,35 @@ app.use(staticServer(path.join(__dirname, 'assets')));
 
 app.use(router(app));
 
-app.get('/',home);
-app.get('/Home',home);
+app.get('/',bloggerList);
+app.get('/Bloggers',bloggerList);
 app.get('/Blogger/:id',blogger)
 app.get('/TimeLine', timeLine);
 app.get('/AboutUs', aboutUs);
 
-
-var blogs = [
-{
-	id:001,
-	name:'hanfeng',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'He is a 2B youth!',
-    hearts:10000
-},
-{
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!',
-    hearts:12000
-},
-{
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql','ruby','音乐','美术','文学','美学','mysql','ruby','音乐','美术'],
-    evaluation:'I am cuican!',
-    hearts:12000
-},
-{
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!',
-    hearts:12000
-},
-{
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!',
-    hearts:12000
-},
-{
-
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!',
-    hearts:12000
-
-},
-{
-
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!',
-    hearts:12000
-
-},
-{
-
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!',
-    hearts:12000
-
-},
-{
-	id:001,
-	name:'hanfeng',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'He is a 2B youth!',
-    hearts:10000
-},
-{
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!',
-    hearts:12000
-},
-{
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql','ruby','音乐','美术','文学','美学','mysql','ruby','音乐','美术'],
-    evaluation:'I am cuican!',
-    hearts:12000
-},
-{
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!',
-    hearts:12000
-},
-{
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!I am cuican!',
-    hearts:12000
-},
-{
-
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!',
-    hearts:12000
-
-},
-{
-
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!',
-    hearts:12000
-
-},
-{
-
-	id:002,
-	name:'cuican',
-	blogUri:"http://localhost:3000/AboutUs",
-    tags:['java','c#','javascript','mysql'],
-    evaluation:'I am cuican!',
-    hearts:12000
-
-}
-];
-
-
 function *home(){
+    for(var i = 0; i < 12; i++) {
+	    var blogger = {
+			id:001,
+			name:'hanfeng',
+			blogImageSrc: "/img/team/1.jpg",
+			blogUri:"http://localhost:3000/Blogger/001",
+		    tags:['java','c#','javascript','mysql'],
+		    evaluation:'He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! ',
+		    hearts:10000
+	    };
+	    bloggers.push(blogger);
+	}
+	this.body = yield render('home',{bloggers:bloggers});
+}
+
+function *bloggerList(){
 	this.body = yield render('home',{blogs:blogs});
 }
 
 function *blogger() {
-	this.body = this.params.id;
+	this.body = yield render('blogger');
+	//this.body = this.params.id;
 }
 
 function *timeLine() {

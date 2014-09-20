@@ -1,30 +1,31 @@
 {% extends 'layout.html' %}
 {% block content %}
          <div class="row team">
-        {% for blog in blogs %}
+        {% for blogger in bloggers %}
             <!-- {% if loop.first %}
             {% endif %} -->
 	            <div class="col-sm-3">
 	                <div class="thumbnail-style thumbnail-kenburn" style="border: 1px solid #ddd;">
 	                    <div class="overflow-hidden">
-	                        <a href="{{ blog.blogUri }}"><img alt="" src="/img/team/1.jpg" class="img-responsive">
+	                        <a href="{{ blogger.blogUri }}">
+	                        	<img alt="" src="{{ blogger.blogImageSrc }}" class="img-responsive">
 	                        </a>
 	                    </div>
 	                    <h3>	                    	
-		                    <a href="{{ blog.blogUri }}">
-		                    	{{ blog.name }}
+		                    <a href="{{ blogger.blogUri }}">
+		                    	{{ blogger.name }}
 		                    </a> 
 		                    <div class="overflow-hidden" style="height:31px;">
-		                       {% for tag in blog.tags %}
+		                       {% for tag in blogger.tags %}
 		                           <span class="label label-light">{{ tag }}</span>
 		                       {% endfor %}
 		                    </div>
 	                    </h3>
-	                    <p style="height: 55px;" class="overflow-hidden">{{ blog.evaluation }}</p>
+	                    <p style="height: 55px;" class="overflow-hidden">{{ blogger.evaluation }}</p>
 	                    <ul class="list-unstyled list-inline team-socail">
 	                        <li class="pull-left">
 	                        	<i aria-hidden="true" class="fa fa-heart" style="color:red; background:white;"></i> 
-	                        	<span style="font-size:15px;">10000</span>
+	                        	<span style="font-size:15px;">{{ blogger.hearts }}</span>
 	                        </li>
 	                        <li><a href="#"><i class="fa fa-twitter" style="background:white;"></i></a></li>
 	                        <li><a href="#"><i class="fa fa-weibo" style="background:white;"></i></a></li>
