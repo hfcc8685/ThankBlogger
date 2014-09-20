@@ -11,8 +11,8 @@ app.use(staticServer(path.join(__dirname, 'assets')));
 
 app.use(router(app));
 
-app.get('/',home);
-app.get('/Home',home);
+app.get('/',bloggerList);
+app.get('/Bloggers',bloggerList);
 app.get('/Blogger/:id',blogger)
 app.get('/TimeLine', timeLine);
 app.get('/AboutUs', aboutUs);
@@ -162,7 +162,7 @@ var blogs = [
 ];
 
 
-function *home(){
+function *bloggerList(){
 	this.body = yield render('home',{blogs:blogs});
 }
 
