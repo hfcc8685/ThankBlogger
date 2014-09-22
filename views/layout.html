@@ -24,12 +24,18 @@
 	    <!-- CSS Implementing Plugins -->
 	    <link rel="stylesheet" href="/plugins/line-icons/line-icons.css">
 	    <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.css">
-	    
+	    <link rel="stylesheet" href="/plugins/sky-forms/version-2.0.1/css/custom-sky-forms.css">
+    	<link rel="stylesheet" href="/plugins/scrollbar/src/perfect-scrollbar.css">
+
 	    <!-- CSS Page Style -->    
 	    <link rel="stylesheet" href="/css/pages/feature_timeline2.css">
+	    <link rel="stylesheet" href="/css/pages/profile.css">
 
-	    <!-- CSS Theme -->
-	    <link rel="stylesheet" href="/css/themes/default.css">
+	    <!-- CSS Theme -->    
+    	<link rel="stylesheet" href="/css/themes/default.css" id="style_color">
+
+    	<!-- CSS Customization -->
+		<link rel="stylesheet" href="/css/custom.css">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -58,7 +64,7 @@
 		                        <span class="sr-only">Toggle navigation</span>
 		                        <span class="fa fa-bars"></span>
 		                    </button>
-		                    <a class="navbar-brand" style="font-size: 30px;" href="index.html">
+		                    <a class="navbar-brand" style="font-size: 30px;" href="/">
 		                        <span class="text-success">ThankBlogger</span>
 		                    </a>
 		                </div>
@@ -67,7 +73,7 @@
 		                <div class="collapse navbar-collapse navbar-responsive-collapse">
 		                    <ul class="nav navbar-nav">
 		                        <li>
-		                        	<a href="/Bloggers">
+		                        	<a href="/">
 		                        		<span aria-hidden="true" class="icon-home text-success"></span> 主页
 		                        	</a>
 		                       	</li>
@@ -130,17 +136,37 @@
 
 		<!-- JS Implementing Plugins -->
 		<script src="/plugins/back-to-top.js"></script>
+		<script type="text/javascript" src="/plugins/counter/waypoints.min.js"></script>
+		<script type="text/javascript" src="/plugins/counter/jquery.counterup.min.js"></script> 
+
+		<!-- Datepicker Form -->
+		<script src="/plugins/sky-forms/version-2.0.1/js/jquery-ui.min.js"></script>
+
+		<!-- Scrollbar -->
+		<script src="/plugins/scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="/plugins/scrollbar/src/perfect-scrollbar.js"></script>
 
 		<!-- JS Page Level -->
 		<script src="/js/app.js"></script>
-		<script>
+		<script type="text/javascript" src="/js/plugins/datepicker.js"></script>
+
+		<script type="text/javascript">
 		jQuery(document).ready(function() {
 		    App.init();
+		    App.initCounter();
+        	Datepicker.initDatepicker();
 		});
 		</script>
 
+		<script>
+    	jQuery(document).ready(function ($) {
+        	"use strict";
+        	$('.contentHolder').perfectScrollbar();
+    	});
+		</script>
 		<!--[if lt IE 9]>
-		    <script src="/js/respond.js"></script>
-		<![endif]-->	
+		    <script src="/plugins/respond.js"></script>
+		    <script src="/plugins/html5shiv.js"></script>
+		<![endif]-->
 	</body>
 </html>
