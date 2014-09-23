@@ -25,8 +25,8 @@ function *bloggerList(){
 			name:'hanfeng',
 			blogImageSrc: "/img/team/1.jpg",
 			blogUri:"http://localhost:3000/Blogger/001",
-		    tags:['java','c#','javascript','mysql'],
-		    evaluation:'He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! ',
+		    tags:['java','c#','javascript','mysql','java','c#','javascript','mysql'],
+		    evaluation:'He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! ',
 		    hearts:10000
 	    };
 	    bloggers.push(blogger);
