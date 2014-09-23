@@ -23,10 +23,22 @@
 	                    <ul class="list-unstyled list-inline team-socail" style="margin-bottom:0px;">
 	                        <li class="pull-left">
 	                        	<i aria-hidden="true" class="fa fa-heart" style="color:red; background:white;"></i> 
+		                    </a> 		                  
+	                    </h3>
+	                    <p class="overflow-hidden" style="height:25px;">
+	                       {% for tag in blogger.tags %}
+	                           <span class="label label-light">{{ tag }}</span>
+	                       {% endfor %}
+		                </p>
+	                    <p style="height: 55px;" class="overflow-hidden">{{ blogger.evaluation }}</p>
+	                    <ul class="list-unstyled list-inline team-socail" style="margin-bottom:0px;">
+	                        <li class="pull-left">
+	                        	<i aria-hidden="true" class="fa fa-heart" style="color:red; background:white;"></i>                        	
 	                        </li>
-	                        <li class="pull-left"><span style="font-size:18px;">{{ blogger.hearts }}</span></li>
+	                        <li class="pull-left">
+	                    		<span style="font-size:15px;">{{ blogger.hearts }}</span>
+	                        </li>
 	                        <li>
-	                        	
 	                        	<i class="icon-custom rounded-x icon-sm icon-color-u icon-social-twitter"></i>
 	                       	 </li>
 	                        <li><a href="#"><i class="fa fa-weibo" style="background:white;"></i></a></li>
