@@ -5,7 +5,20 @@ var staticServer = require('koa-static')
 var path = require('path');
 
 var app = koa();
-var bloggers = [];
+
+app.use(function *(next){
+  var start = new Date;
+  yield next;
+  var ms = new Date - start;
+  this.set('X-Response-Time', ms + 'ms');
+});
+
+app.use(function *(next){
+  var start = new Date;
+  yield next;
+  var ms = new Date - start;
+  console.log('%s %s - %s', this.method, this.url, ms);
+});
 
 //处理静态资源文件夹
 app.use(staticServer(path.join(__dirname, 'assets')));
@@ -19,14 +32,15 @@ app.get('/TimeLine', timeLine);
 app.get('/AboutUs', aboutUs);
 
 function *bloggerList(){
+	var bloggers = [];
 	 for(var i = 0; i < 12; i++) {
 	    var blogger = {
 			id:001,
-			name:'hanfeng',
+			name:'顾城',
 			blogImageSrc: "/img/team/1.jpg",
 			blogUri:"http://localhost:3000/Blogger/001",
 		    tags:['java','c#','javascript','mysql'],
-		    evaluation:'He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! He is a 2B youth! ',
+		    evaluation:'你,一会看我,一会看云,我觉得,你看我时很远,你看云时很近.--顾城 <<远和近>>',
 		    hearts:10000
 	    };
 	    bloggers.push(blogger);
