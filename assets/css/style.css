@@ -3775,8 +3775,7 @@ body.dark .tp-banner-container .btn-u.btn-brd.btn-u-light {
 .revolution-ch2:after {
 	left: 50%;
 	width: 70px;
-	height: 2px;
-	content: ' ';	
+	height: 2px;	
 	bottom: -20px;
 	background: #fff;
 	margin-left: -35px;
