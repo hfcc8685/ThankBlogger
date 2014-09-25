@@ -1,1 +1,4 @@
-/* Add here all your css styles (customizations) */
+.table th{
+	font-size:15px;
+	text-align:left;
+}
