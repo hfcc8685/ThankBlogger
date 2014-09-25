@@ -90,39 +90,31 @@
 		                        		<span aria-hidden="true" class="icon-home text-success"></span> 主页
 		                        	</a>
 		                       	</li>
+		                       	<li>
+		                       		<a href="/User/001">
+		                       			<span aria-hidden="true" class="icon-notebook text-success"></span> 我的痕迹
+		                       		</a>
+		                       	</li>
 		                        <li><a href="/Timeline">
 		                        	<span aria-hidden="true" class="icon-directions text-success"></span> 时间轴</a>
 		                        </li>
 		                        <li><a href="/AboutUs">
 		                        	<span aria-hidden="true" class="icon-bubbles text-success"></span> 关于我们</a>
-		                        </li>
-		                        <!-- Search Block -->
-		                        <li>
-		                            <i class="search fa fa-search search-btn"></i>
-		                            <div class="search-open">
-		                                <div class="input-group animated fadeInDown">
-		                                    <input type="text" class="form-control" placeholder="Search">
-		                                    <span class="input-group-btn">
-		                                        <button class="btn-u" type="button">Go</button>
-		                                    </span>
-		                                </div>
-		                            </div>    
-		                        </li>
-		                        <!-- End Search Block -->
+		                        </li>		                      
 		                    </ul>
 		                </div><!--/navbar-collapse-->
 		            </div>    
 		        </div>            
 		        <!-- End Navbar -->
 		    </div>
-		    <!--=== End Header ===-->      
+		    <!--=== End Header ===-->    
+
 			<!--=== Content Part  ===-->
-			<div class="container content">
-				{% block content %}
-					<p>Missing content!</p>
-				{% endblock %}
-			</div><!--/container-->
+			{% block content %}
+				<p>Missing content!</p>
+			{% endblock %}
 			<!--=== End Content Part  ===-->	 
+
 			<!--=== Copyright ===-->
 		    <div class="copyright">
 		        <div class="container">

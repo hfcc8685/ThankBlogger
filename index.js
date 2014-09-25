@@ -28,6 +28,7 @@ app.use(router(app));
 app.get('/',bloggerList);
 app.get('/Bloggers',bloggerList);
 app.get('/Blogger/:id',blogger)
+app.get('/User/:id',user);
 app.get('/TimeLine', timeLine);
 app.get('/AboutUs', aboutUs);
 
@@ -51,6 +52,10 @@ function *bloggerList(){
 function *blogger() {
 	this.body = yield render('blogger');
 	//this.body = this.params.id;
+}
+
+function *user() {
+	this.body = yield render('user');
 }
 
 function *timeLine() {
