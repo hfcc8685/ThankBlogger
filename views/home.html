@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
+<div class="container content">
          <div class="row team">
         {% for blogger in bloggers %}
 	            <div class="col-sm-3">
@@ -41,4 +42,5 @@
         <div >
         	<button class="btn-u btn-brd rounded-4x btn-u-lg pull-right" type="button"><i class="fa fa-random"></i>  寻觅</button>
         </div>
+</div>
 {% endblock %}

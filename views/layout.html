@@ -90,6 +90,11 @@
 		                        		<span aria-hidden="true" class="icon-home text-success"></span> 主页
 		                        	</a>
 		                       	</li>
+		                       	<li>
+		                       		<a href="/User/001">
+		                       			<span aria-hidden="true" class="icon-notebook text-success"></span> 我的痕迹
+		                       		</a>
+		                       	</li>
 		                        <li><a href="/Timeline">
 		                        	<span aria-hidden="true" class="icon-directions text-success"></span> 时间轴</a>
 		                        </li>
@@ -102,14 +107,14 @@
 		        </div>            
 		        <!-- End Navbar -->
 		    </div>
-		    <!--=== End Header ===-->      
+		    <!--=== End Header ===-->    
+
 			<!--=== Content Part  ===-->
-			<div class="container content">
-				{% block content %}
-					<p>Missing content!</p>
-				{% endblock %}
-			</div><!--/container-->
+			{% block content %}
+				<p>Missing content!</p>
+			{% endblock %}
 			<!--=== End Content Part  ===-->	 
+
 			<!--=== Copyright ===-->
 		    <div class="copyright">
 		        <div class="container">
