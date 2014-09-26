@@ -10,7 +10,7 @@ app.use(function *(next){
   var start = new Date;
   yield next;
   var ms = new Date - start;
-  this.set('X-Response-Time', ms + 'ms');
+  console.log('X-Response-Time', ms + 'ms');
 });
 
 app.use(function *(next){
@@ -36,13 +36,15 @@ function *bloggerList(){
 	var bloggers = [];
 	 for(var i = 0; i < 12; i++) {
 	    var blogger = {
-			id:001,
-			name:'顾城',
-			blogImageSrc: "/img/1.png",
-			blogUri:"http://localhost:3000/Blogger/001",
-		    tags:['java','c#','javascript','mysql'],
-		    evaluation:'你,一会看我,一会看云,我觉得,你看我时很远,你看云时很近.--顾城 <<远和近>>',
-		    hearts:10000
+			id: 001,
+			name: "顾城",
+			blogImageSrc: "/img/team/1.jpg",
+			blogUri: "http://localhost:3000/Blogger/001",
+			twitter: "http://www.twitter.com",
+			weibo: "http://www.weibo.com",
+		    tags: ["java","c#","javascript","mysql"],
+		    evaluations: ["你,一会看我,一会看云,我觉得,你看我时很远,你看云时很近.--顾城 <<远和近>>"],
+		    hearts: 10000
 	    };
 	    bloggers.push(blogger);
 	}
@@ -50,7 +52,18 @@ function *bloggerList(){
 }
 
 function *blogger() {
-	this.body = yield render('blogger');
+	    var blogger = {
+			id: 001,
+			name: "顾城",
+			blogImageSrc: "/img/team/1.jpg",
+			blogUri: "http://localhost:3000/Blogger/001",
+			twitter: "http://www.twitter.com",
+			weibo: "http://www.weibo.com",
+		    tags: ["java","c#","javascript","mysql"],
+		    evaluations: ["你,一会看我,一会看云,我觉得,你看我时很远,你看云时很近.--顾城 <<远和近>>"],
+		    hearts: 10000
+	    };
+	this.body = yield render('blogger',{blogger: blogger});
 	//this.body = this.params.id;
 }
 
@@ -59,7 +72,17 @@ function *user() {
 }
 
 function *timeLine() {
-	this.body = yield render('timeline');
+	var timeLines = [];
+	for (var i = 0; i < 12; i++) {
+		var timeLine = {
+			time : "2012-09-04",
+			month : "九月",
+			title : "<<避免>> -- 顾城",
+			description : "你不愿意种花，你说，我不愿看见它一点点凋落。是的，为了避免结束，你避免了一切开始."
+		};	
+		timeLines.push(timeLine);
+	};	
+	this.body = yield render('timeline', {timeLines:timeLines});
 }
 
 function *aboutUs() {
@@ -67,3 +90,5 @@ function *aboutUs() {
 }
 
 app.listen(3000);
+
+console.log("start listen 3000 ... ...");
