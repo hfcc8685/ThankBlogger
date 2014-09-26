@@ -38,7 +38,7 @@ function *bloggerList(){
 	    var blogger = {
 			id: 001,
 			name: "顾城",
-			blogImageSrc: "/img/team/1.jpg",
+			blogImageSrc: "/img/1.png",
 			blogUri: "http://localhost:3000/Blogger/001",
 			twitter: "http://www.twitter.com",
 			weibo: "http://www.weibo.com",
@@ -55,7 +55,7 @@ function *blogger() {
 	    var blogger = {
 			id: 001,
 			name: "顾城",
-			blogImageSrc: "/img/team/1.jpg",
+			blogImageSrc: "/img/1.png",
 			blogUri: "http://localhost:3000/Blogger/001",
 			twitter: "http://www.twitter.com",
 			weibo: "http://www.weibo.com",
