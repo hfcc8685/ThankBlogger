@@ -1,181 +1,176 @@
 {% extends 'layout.html' %}
+
+{% block style%}
+    {% parent %}
+    <link rel="stylesheet" href="/css/pages/blog.css">
+    <link rel="stylesheet" href="/css/pages/profile.css">
+{% endblock %}
+
 {% block content %}
-  <!--=== Content Part ===-->
-    <div class="container content blog-page blog-item">     
-        <!--Blog Post-->        
-        <div class="blog margin-bottom-10">
-            <div class="blog-img" style="margin:0px;">
-                <img class="img-responsive" src="/img/sliders/coolshell.png" alt="">
-            </div> 
-            <div>
-                <h2 class="pull-left">酷壳</h2>
-                <ul class="list-unstyled list-inline blog-info pull-right" style="margin-top:8px;">
-                    <li>
-                        <button class="btn-u btn-brd rounded btn-u-green btn-u-sm" type="button">
-                            <i aria-hidden="true" class="fa fa-heart" style="color:red;"></i> 10000
-                        </button>  
-                    </li>
-                    <li>
-                        <button class="btn-u btn-brd rounded btn-u-green btn-u-sm" type="button">
-                            <i class="fa fa-twitter"></i> twitter
-                        </button>  
-                    </li>
-                    <li>
-                        <button class="btn-u btn-brd rounded btn-u-green btn-u-sm" type="button">
-                            <i class="fa fa-weibo"></i> Weibo
-                        </button>
-                    </li>
-                </ul>                                               
-            </div>           
-            <div class="clearfix"></div>
-            <div class="blog-post-tags">
-                <ul class="list-unstyled list-inline blog-info">
-                    <li><span class="label label-light">c#</span></li>
-                    <li><span class="label label-light">java</span></li>
-                    <li><span class="label label-light">node.js</span></li>
-                    <li><span class="label label-light">生活</span></li>
-                    <li><span class="label label-light">生活</span></li>
-                    <li><span class="label label-light">生活</span></li>
-                    <li><span class="label label-light">生活</span></li>
-                    <li><span class="label label-light">生活</span></li>
-                    <li><span class="label label-light">生活</span></li>
-                    <li><span class="label label-light">生活</span></li>
-                    <li><span class="label label-light">c#</span></li>
-                    <li><span class="label label-light">java</span></li>
-                    <li><span class="label label-light">node.js</span></li>
-                    <li><span class="label label-light">生活</span></li>
-                    <li><span class="label label-light">生活</span></li>
-                </ul>
-            </div>      
-        </div>
-        <!--End Blog Post-->        
+<!--=== Content Part ===-->
+<div class="container content blog-page blog-item">     
+    <!--Blog Post-->        
+    <div class="blog margin-bottom-10">
+        <div class="blog-img" style="margin:0px;">
+            <img class="img-responsive" src="/img/sliders/coolshell.png" alt="">
+        </div> 
+        <div>
+            <h2 class="pull-left">{{ blogger.name }}</h2>
+            <ul class="list-unstyled list-inline blog-info pull-right" style="margin-top:8px;">
+                <li>
+                    <button class="btn-u btn-brd rounded btn-u-green btn-u-sm" type="button">
+                        <i aria-hidden="true" class="fa fa-heart" style="color:red;"></i> {{ blogger.hearts }}
+                    </button>  
+                </li>
+                <li>
+                    <button class="btn-u btn-brd rounded btn-u-green btn-u-sm" type="button">
+                        <i class="fa fa-twitter"></i> twitter
+                    </button>  
+                </li>
+                <li>
+                    <button class="btn-u btn-brd rounded btn-u-green btn-u-sm" type="button">
+                        <i class="fa fa-weibo"></i> Weibo
+                    </button>
+                </li>
+            </ul>                                               
+        </div>           
+        <div class="clearfix"></div>
+        <div class="blog-post-tags">
+            <ul class="list-unstyled list-inline blog-info">
+                {% for tag in blogger.tags %}
+                    <li><span class="label label-light"> {{ tag }}</span></li>    
+                {% endfor %}                
+            </ul>
+        </div>      
+    </div>
+    <!--End Blog Post-->        
 
-        <!--Profile 对博主评价-->
-        <div class="profile" style="background: #f7f7f7; padding:1px;">
-            <div class="panel panel-profile no-bg">
-                <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>对博主的评价</h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
+    <!--Profile 对博主评价-->
+    <div class="profile" style="background: #f7f7f7; padding:1px;">
+        <div class="panel panel-profile no-bg">
+            <div class="panel-heading overflow-h">
+                <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>对博主的评价</h2>
+                <a href="#"><i class="fa fa-cog pull-right"></i></a>
+            </div>
+            <div id="scrollbar" class="panel-body contentHolder">
+                <div class="profile-post color-one">
+                    <span class="profile-post-numb">01</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Creative Blog</a></h3>
+                        <p>How to market yourself as a freelance designer</p>
+                    </div>
                 </div>
-                <div id="scrollbar" class="panel-body contentHolder">
-                    <div class="profile-post color-one">
-                        <span class="profile-post-numb">01</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Creative Blog</a></h3>
-                            <p>How to market yourself as a freelance designer</p>
-                        </div>
+                <div class="profile-post color-two">
+                    <span class="profile-post-numb">02</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Codrops Collective #117</a></h3>
+                        <p>Web Design &amp; Development News</p>
                     </div>
-                    <div class="profile-post color-two">
-                        <span class="profile-post-numb">02</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Codrops Collective #117</a></h3>
-                            <p>Web Design &amp; Development News</p>
-                        </div>
-                    </div>
-                    <div class="profile-post color-three">
-                        <span class="profile-post-numb">03</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Sketch Toolbox</a></h3>
-                            <p>Basic prototype of a package manager for Sketch</p>
-                        </div>
-                    </div>
-                    <div class="profile-post color-four">
-                        <span class="profile-post-numb">04</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Amazing Portfolio</a></h3>
-                            <p>Create a free online portfolio lookbook with Readz</p>
-                        </div>
-                    </div>
-                    <div class="profile-post color-five">
-                        <span class="profile-post-numb">05</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Discover New Features</a></h3>
-                            <p>More than 100+ amazing add-ons coming soon...</p>
-                        </div>
-                    </div>
-                    <div class="profile-post color-six">
-                        <span class="profile-post-numb">06</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Corporation Plans</a></h3>
-                            <p>Discussion of new corporation plans</p>
-                        </div>
-                    </div>
-                    <div class="profile-post color-seven">
-                        <span class="profile-post-numb">07</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Project Updates</a></h3>
-                            <p>New features of coming update</p>
-                        </div>
-                    </div>                
-                </div>   
-            </div>            
-        </div>
-        <!--End Profile 对博主评价-->
-
-        <hr>
-
-        <!--Profile 推荐博主文章-->
-        <div class="profile" style="background: #f7f7f7; padding:1px;">
-            <div class="panel panel-profile no-bg">
-                <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>推荐博主文章</h2>
-                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
                 </div>
-                <div id="scrollbar" class="panel-body contentHolder">
-                    <div class="profile-post color-one">
-                        <span class="profile-post-numb">01</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Creative Blog</a></h3>
-                            <p>How to market yourself as a freelance designer</p>
-                        </div>
+                <div class="profile-post color-three">
+                    <span class="profile-post-numb">03</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Sketch Toolbox</a></h3>
+                        <p>Basic prototype of a package manager for Sketch</p>
                     </div>
-                    <div class="profile-post color-two">
-                        <span class="profile-post-numb">02</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Codrops Collective #117</a></h3>
-                            <p>Web Design &amp; Development News</p>
-                        </div>
+                </div>
+                <div class="profile-post color-four">
+                    <span class="profile-post-numb">04</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Amazing Portfolio</a></h3>
+                        <p>Create a free online portfolio lookbook with Readz</p>
                     </div>
-                    <div class="profile-post color-three">
-                        <span class="profile-post-numb">03</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Sketch Toolbox</a></h3>
-                            <p>Basic prototype of a package manager for Sketch</p>
-                        </div>
+                </div>
+                <div class="profile-post color-five">
+                    <span class="profile-post-numb">05</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Discover New Features</a></h3>
+                        <p>More than 100+ amazing add-ons coming soon...</p>
                     </div>
-                    <div class="profile-post color-four">
-                        <span class="profile-post-numb">04</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Amazing Portfolio</a></h3>
-                            <p>Create a free online portfolio lookbook with Readz</p>
-                        </div>
+                </div>
+                <div class="profile-post color-six">
+                    <span class="profile-post-numb">06</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Corporation Plans</a></h3>
+                        <p>Discussion of new corporation plans</p>
                     </div>
-                    <div class="profile-post color-five">
-                        <span class="profile-post-numb">05</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Discover New Features</a></h3>
-                            <p>More than 100+ amazing add-ons coming soon...</p>
-                        </div>
+                </div>
+                <div class="profile-post color-seven">
+                    <span class="profile-post-numb">07</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Project Updates</a></h3>
+                        <p>New features of coming update</p>
                     </div>
-                    <div class="profile-post color-six">
-                        <span class="profile-post-numb">06</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Corporation Plans</a></h3>
-                            <p>Discussion of new corporation plans</p>
-                        </div>
-                    </div>
-                    <div class="profile-post color-seven">
-                        <span class="profile-post-numb">07</span>
-                        <div class="profile-post-in">
-                            <h3 class="heading-xs"><a href="#">Project Updates</a></h3>
-                            <p>New features of coming update</p>
-                        </div>
-                    </div>                
-                </div>   
-            </div>            
-        </div>
-        <!--End Profile 推荐博主文章-->
+                </div>                
+            </div>   
+        </div>            
+    </div>
+    <!--End Profile 对博主评价-->
 
-    </div><!--/container-->     
-    <!--=== End Content Part ===-->
+    <hr>
+
+    <!--Profile 推荐博主文章-->
+    <div class="profile" style="background: #f7f7f7; padding:1px;">
+        <div class="panel panel-profile no-bg">
+            <div class="panel-heading overflow-h">
+                <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>推荐博主文章</h2>
+                <a href="#"><i class="fa fa-cog pull-right"></i></a>
+            </div>
+            <div id="scrollbar" class="panel-body contentHolder">
+                <div class="profile-post color-one">
+                    <span class="profile-post-numb">01</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Creative Blog</a></h3>
+                        <p>How to market yourself as a freelance designer</p>
+                    </div>
+                </div>
+                <div class="profile-post color-two">
+                    <span class="profile-post-numb">02</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Codrops Collective #117</a></h3>
+                        <p>Web Design &amp; Development News</p>
+                    </div>
+                </div>
+                <div class="profile-post color-three">
+                    <span class="profile-post-numb">03</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Sketch Toolbox</a></h3>
+                        <p>Basic prototype of a package manager for Sketch</p>
+                    </div>
+                </div>
+                <div class="profile-post color-four">
+                    <span class="profile-post-numb">04</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Amazing Portfolio</a></h3>
+                        <p>Create a free online portfolio lookbook with Readz</p>
+                    </div>
+                </div>
+                <div class="profile-post color-five">
+                    <span class="profile-post-numb">05</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Discover New Features</a></h3>
+                        <p>More than 100+ amazing add-ons coming soon...</p>
+                    </div>
+                </div>
+                <div class="profile-post color-six">
+                    <span class="profile-post-numb">06</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Corporation Plans</a></h3>
+                        <p>Discussion of new corporation plans</p>
+                    </div>
+                </div>
+                <div class="profile-post color-seven">
+                    <span class="profile-post-numb">07</span>
+                    <div class="profile-post-in">
+                        <h3 class="heading-xs"><a href="#">Project Updates</a></h3>
+                        <p>New features of coming update</p>
+                    </div>
+                </div>                
+            </div>   
+        </div>            
+    </div>
+    <!--End Profile 推荐博主文章-->
+
+</div><!--/container-->     
+<!--=== End Content Part ===-->
 {% endblock %}
