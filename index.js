@@ -38,7 +38,7 @@ function *bloggerList(){
 	    var blogger = {
 			id:001,
 			name:'顾城',
-			blogImageSrc: "/img/team/1.jpg",
+			blogImageSrc: "/img/1.png",
 			blogUri:"http://localhost:3000/Blogger/001",
 		    tags:['java','c#','javascript','mysql'],
 		    evaluation:'你,一会看我,一会看云,我觉得,你看我时很远,你看云时很近.--顾城 <<远和近>>',
