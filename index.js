@@ -7,17 +7,12 @@ var path = require('path');
 var app = koa();
 
 app.use(function *(next){
-  var start = new Date;
-  yield next;
-  var ms = new Date - start;
-  console.log('X-Response-Time', ms + 'ms');
-});
-
-app.use(function *(next){
+  console.log("********************************************************");
   var start = new Date;
   yield next;
   var ms = new Date - start;
   console.log('%s %s - %s', this.method, this.url, ms);
+  console.log("********************************************************");
 });
 
 //处理静态资源文件夹
