@@ -1,21 +1,27 @@
-var koa = require('koa')
-var render = require('./lib/render')
-var router = require('koa-router')
-var staticServer = require('koa-static')
+var koa = require('koa');
+var render = require('./lib/render');
+var router = require('koa-router');
 var path = require('path');
+
+// var staticServer = require('koa-static');
+var staticCache = require('koa-static-cache');
 
 var app = koa();
 
-// app.use(function *(next){
-//   var start = new Date;
-//   yield next;
-//   var ms = new Date - start;
-//   console.log('%s %s - %s', this.method, this.url, ms);
-// });
+app.use(function *(next){
+  var start = new Date;
+  yield next;
+  var ms = new Date - start;
+  console.log('%s %s - %s', this.method, this.url, ms);
+});
 
 //处理静态资源文件夹
-app.use(staticServer(path.join(__dirname, 'assets')));
-app.use(staticServer(path.join(__dirname, 'public')));
+// app.use(staticServer(path.join(__dirname, 'assets')));
+// app.use(staticServer(path.join(__dirname, 'public')));
+app.use(staticCache(path.join(__dirname, 'assets')));
+app.use(staticCache(path.join(__dirname, 'public'),{	
+	maxAge: 24*60*60
+}));
 
 app.use(router(app));
 
