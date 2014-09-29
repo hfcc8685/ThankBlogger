@@ -6,17 +6,16 @@ var path = require('path');
 
 var app = koa();
 
-app.use(function *(next){
-  console.log("********************************************************");
-  var start = new Date;
-  yield next;
-  var ms = new Date - start;
-  console.log('%s %s - %s', this.method, this.url, ms);
-  console.log("********************************************************");
-});
+// app.use(function *(next){
+//   var start = new Date;
+//   yield next;
+//   var ms = new Date - start;
+//   console.log('%s %s - %s', this.method, this.url, ms);
+// });
 
 //处理静态资源文件夹
 app.use(staticServer(path.join(__dirname, 'assets')));
+app.use(staticServer(path.join(__dirname, 'public')));
 
 app.use(router(app));
 
@@ -33,7 +32,7 @@ function *bloggerList(){
 	    var blogger = {
 			id: 001,
 			name: "顾城",
-			blogImageSrc: "/img/1.png",
+			blogImageSrc: "/blogImg/1.png",
 			blogUri: "http://localhost:3000/Blogger/001",
 			twitter: "http://www.twitter.com",
 			weibo: "http://www.weibo.com",
@@ -50,7 +49,7 @@ function *blogger() {
 	    var blogger = {
 			id: 001,
 			name: "顾城",
-			blogImageSrc: "/img/1.png",
+			blogImageSrc: "/blogImg/coolshell.png",
 			blogUri: "http://localhost:3000/Blogger/001",
 			twitter: "http://www.twitter.com",
 			weibo: "http://www.weibo.com",
