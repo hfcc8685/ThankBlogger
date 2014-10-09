@@ -6,13 +6,6 @@ var staticCache = require('koa-static-cache');
 
 var app = koa();
 
-// app.use(function *(next){
-//   var start = new Date;
-//   yield next;
-//   var ms = new Date - start;
-//   console.log('%s %s - %s', this.method, this.url, ms);
-// });
-
 //处理静态资源文件夹
 app.use(staticCache(path.join(__dirname, 'assets')));
 app.use(staticCache(path.join(__dirname, 'public'),{	
@@ -21,12 +14,16 @@ app.use(staticCache(path.join(__dirname, 'public'),{
 
 app.use(router(app));
 
+
 app.get('/',bloggerList);
 app.get('/Bloggers',bloggerList);
 app.get('/Blogger/:id',blogger)
 app.get('/User/:id',user);
+app.get('/Gatekeep',gatekeep);
 app.get('/TimeLine', timeLine);
 app.get('/AboutUs', aboutUs);
+app.get('/Registration', registration);
+app.get('/Login', login);
 
 function *bloggerList(){
 	var bloggers = [];
@@ -67,6 +64,10 @@ function *user() {
 	this.body = yield render('user');
 }
 
+function *gatekeep() {
+	this.body = yield render('gatekeep');
+}
+
 function *timeLine() {
 	var timeLines = [];
 	for (var i = 0; i < 12; i++) {
@@ -83,6 +84,14 @@ function *timeLine() {
 
 function *aboutUs() {
 	this.body = yield render('aboutUs');
+}
+
+function *registration() {
+	this.body = yield render('registration');
+}
+
+function *login() {
+	this.body = yield render('login');
 }
 
 app.listen(3000);
