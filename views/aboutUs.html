@@ -1,157 +1,16 @@
 {% extends 'layout.html' %}
+{% block style%}
+    {% parent %}
+    <link rel="stylesheet" href="/css/pages/blog.css">
+{% endblock %}
 {% block content %}
-<div class="container content">
-<!--=== Slider ===-->
-    <div class="tp-banner-container">
-        <div class="tp-banner">
-            <ul>
-                <!-- SLIDE -->
-                <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000">
-                    <!-- MAIN IMAGE -->
-                    <img src="/img/city.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-
-                    <div class="tp-caption revolution-ch1 sft start"
-                        data-x="center"
-                        data-hoffset="0"
-                        data-y="50"
-                        data-speed="1500"
-                        data-start="500"
-                        data-easing="Back.easeInOut"
-                        data-endeasing="Power1.easeIn"                        
-                        data-endspeed="300">
-                        站在巨人的肩膀上 
-                    </div>
-
-                    <!-- LAYER -->
-                    <div class="tp-caption revolution-ch2 sft"
-                        data-x="100"
-                        data-hoffset="0"
-                        data-y="160"
-                        data-speed="1400"
-                        data-start="2000"
-                        data-easing="Power4.easeOut"
-                        data-endspeed="1000"
-                        data-endeasing="Power1.easeIn"
-                        data-captionhidden="off"
-                        style="z-index: 6">
-                        我们周边有很多人缺少“寻找牛人”的能力，他们想读点东西时，往往是不知所措，不知从何入手，无非是百度百度<br/>再百度，而百度出来的东西。。呵呵，你懂的。与此同时，有很多无私分享的人在自己的博客中辛勤的写出了很多<br/>优秀的文章，优秀的博文是应该被搬上舞台分享的，但却被埋没在网络数字里，拜读的人很少，越少人阅读博文的<br/>价值就越难发挥出来。ThankBlogger为此而生，希望做一座闪闪发光的小桥。<br/>
-                        ThankBlogger属于博主们，它像一个思想大熔炉，知识和生活乐趣能在这里被更广泛的传播。我们不能否认这样的<br/>
-                        可能，一个人因为ThankBlogger受到博主们的启发和影响，从而成为了第一个写出中国操作系统的人。<br/>
-                    </div>
-                    <div class="tp-caption sft"
-                        data-x="center"
-                        data-hoffset="0"
-                        data-y="310"
-                        data-speed="1600"
-                        data-start="2800"
-                        data-easing="Power4.easeOut"
-                        data-endspeed="300"
-                        data-endeasing="Power1.easeIn"
-                        data-captionhidden="off"
-                        style="z-index: 6">
-                    </div>
-                </li>
-                <!-- END SLIDE -->
-            </ul>
-            <div class="tp-bannertimer tp-bottom"></div>            
-        </div>
+<div class="container content">     
+    <div class="blog margin-bottom-40">
+            <div class="blog-img">
+                <img class="img-responsive" src="/img/library.jpg" alt="">
+            </div>
+            <h2>每个人都是一本书</h2>
+            <p>每个人都是一本书，每本书影响着至少一个人，读好的博客不仅像读一本美妙的书，还仿佛在与这个阳光灿烂的博主把酒欢谈。ThankBlogger不止于一个推荐优秀博主的平台，思想交流产生的蝴蝶效应才更加珍贵，别忘了书写自己人生这本书，希望在这个“书馆”里碰撞出思想的火花，诞生更多伟大博主，更多精彩博文。我们不能否认这样一种可能，一个人因为ThankBlogger受到博主们的启发和影响，从而成为了第一个写出中国操作系统的人。</p>
     </div>
-    <!--=== End Slider ===-->
-    <div class="margin-bottom-40"></div>
-       <div class="table-search-v2 margin-bottom-20">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th style="text-align:center">头像</th>
-                                        <th class="hidden-sm">经历</th>
-                                        <th>状态</th>
-                                        <th>点我点我</th>
-                                    </tr> 
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <img class="rounded-x" src="/img/masonry/blog1.jpg" alt="">
-                                        </td>
-                                        <td class="td-width">
-                                            <h3><a href="#">Sed nec elit arcu</a></h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id commodo lacus. Fusce non malesuada ante. Donec vel arcu.</p>
-                                            <small class="hex">Joined February 28, 2014</small>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">Success</span>
-                                        </td>
-                                        <td>
-                                            <ul class="list-inline s-icons">
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Facebook" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Twitter" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Dropbox" href="#">
-                                                    <i class="fa fa-dropbox"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Linkedin" href="#">
-                                                        <i class="fa fa-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <span><a href="#">info@example.com</a></span>
-                                            <span><a href="#">www.htmlstream.com</a></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img class="rounded-x" src="/img/masonry/blog2.jpg" alt="">
-                                        </td>
-                                        <td>
-                                            <h3><a href="#">Donec at aliquam est, a mattis mauris</a></h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id commodo lacus. Fusce non malesuada ante. Donec vel arcu.</p>
-                                            <small class="hex">Joined March 2, 2014</small>
-                                        </td>
-                                        <td>
-                                            <span class="label label-info"> Pending</span>
-                                        </td>
-                                        <td>
-                                            <ul class="list-inline s-icons">
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Facebook" href="#">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Twitter" href="#">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Dropbox" href="#">
-                                                    <i class="fa fa-dropbox"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Linkedin" href="#">
-                                                        <i class="fa fa-linkedin"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <span><a href="#">info@example.com</a></span>
-                                            <span><a href="#">www.htmlstream.com</a></span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>    
-  
-</div>
 </div>
 {% endblock %}
