@@ -19,6 +19,7 @@ body {
    color: #333; 
    font-size: 13px;
    line-height: 1.6;
+   font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
 }
 
 p, 

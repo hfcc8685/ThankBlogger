@@ -15,15 +15,11 @@
 	                        	<img alt="" src="{{ blogger.blogImageSrc }}" class="img-responsive">
 	                        </a>
 	                    </div>
-	                    <h2>	                    	
-		                    <a href="{{ blogger.blogUri }}">
-		                    	{{ blogger.name }}
-		                    </a> 
-	                    </h2>
+	                    <h2> {{ blogger.name }} </h2>
 	                    <p class="overflow-hidden" style="height: 20px;">
-		                       {% for tag in blogger.tags %}
-		                           <span class="label label-light">{{ tag }}</span>
-		                       {% endfor %}
+	                       {% for tag in blogger.tags %}
+	                           <span class="label label-light">{{ tag }}</span>
+	                       {% endfor %}
 		                </p>
 	                    <p class="overflow-hidden" style="height: 62px;">{{ blogger.evaluations[0] }}</p>
 	                    <ul class="list-unstyled list-inline team-socail" style="margin-bottom:0px;">
