@@ -12,6 +12,7 @@ app.use(staticCache(path.join(__dirname, 'public'),{
 	maxAge: 24*60*60
 }));
 
+//add router
 app.use(router(app));
 
 
